@@ -1,13 +1,15 @@
 spring:
     datasource:
-        url: jdbc:h2:mem:testdb;
+        url: jdbc:h2:file:./data/h2db
         driverClassName: org.h2.Driver
-        username: sa
+        username: yks
         password:
+
     jpa:
         database-platform: org.hibernate.dialect.H2Dialect
         hibernate:
-            ddl-auto: update 
+            ddl-auto: update
+        show-sql: true
   
 server: 
     port: 9000

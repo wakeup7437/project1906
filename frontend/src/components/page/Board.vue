@@ -13,7 +13,7 @@
 </template>
 <script>
 import Nav from '@/components/common/Nav.vue'
-import BoardList from '@/components/basic/BoardList.vue'
+import BoardList from '@/components/board/BoardList.vue'
 import SideBar from '@/components/common/SideBar.vue'
 export default {
   name: 'board',

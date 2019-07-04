@@ -2,7 +2,7 @@
 <nav class="container navbar navbar-default">
   <ul class="nav nav-pills">
     <li class="navbar-header"><h3>전체</h3></li>
-    <form class="navbar-form navbar-right"><button class="btn btn-success">글쓰기</button></form>
+    <form class="navbar-form navbar-right"><router-link class="btn btn-success" to="/board/write">글쓰기</router-link></form>
   </ul>
   <ul class="nav nav-pills">
   <li role="presentation"><a href="#">인기</a></li>
