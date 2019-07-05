@@ -27,24 +27,24 @@ export default {
     },
     data(){
         return{
-            arr: [{recommand:"0",writer:"1",title : 'ptitle1',category : 'pcategory1'},
-                {recommand:"0",writer:"2",title : 'ptitle2',category : 'pcategory2'},
-                {recommand:"0",writer:"3",title : 'ptitle3',category : 'pcategory3'},
-                {writer:"5"}]
+            arr: []
         }
     },
     methods:{
-        created:function(){
+        
+    },
+    created:function(){
         axios.get("http://localhost:9000/board/all")
         .then(res=>{
-            console.log(res.data)
+            // for(item in res.data){
+            //     console.log("dddd:"+item)
+            // }
+            this.arr=res.data
         })
         .catch(e=>{
-            alert(e.data)
-        })()
-        }
+            alert("xxxxx"+e)
+        })
     }
-
 }
 
 </script>
