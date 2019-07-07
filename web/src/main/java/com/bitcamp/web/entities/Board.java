@@ -8,10 +8,8 @@ import javax.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.DynamicInsert;
-import org.hibernate.annotations.DynamicUpdate;
 
 import lombok.AccessLevel;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -37,23 +35,7 @@ public class Board implements Serializable {
     @Column(name="category",nullable = false) private String category;
     @Column(name="content",nullable = false) private String content;
     @Column(name="recommend") @ColumnDefault("0") String recommend;
-    @Column(name="photolink") private String photolink;
 
     @CreationTimestamp private Timestamp regdate;
     
-    @Override
-    public String toString(){
-        return String.format("test");
-    }
-
-    @Builder
-    public Board(String writer,String title, String category,
-    String content,String recommend,String photolink){
-        this.writer = writer;
-        this.title = title;
-        this.category = category;
-        this.content = content;
-        this.recommend = recommend;
-        this.photolink = photolink;
-    }
 }

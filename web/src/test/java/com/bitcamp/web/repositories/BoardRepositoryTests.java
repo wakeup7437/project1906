@@ -25,10 +25,10 @@ public class BoardRepositoryTests {
     @Test
     public void testInsert(){
         Board board=new Board();
-        board.setTitle("제목");
-        board.setCategory("자유");
-        board.setContent("내용");
-        board.setWriter("writer");
+        // board.setTitle("제목");
+        // board.setCategory("자유");
+        // board.setContent("내용");
+        // board.setWriter("writer");
         boardRepo.save(board);
         
     }

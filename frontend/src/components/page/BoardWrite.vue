@@ -23,7 +23,6 @@
             <div class="form-group">
             <input type="text" class="form-control" v-model="writer" placeholder="작성자" >
             <input type="text" class="form-control" v-model="title" placeholder="제목" >
-            <input type="url" class="form-control" placeholder="동영상 또는 사이트 링크를 입력해주세요.(선택)">
             </div>
             <div class="form-group">
                 <textarea class="form-control" v-model="content" rows="15" placeholder="contents">
@@ -31,8 +30,8 @@
     
             </div>
             <div class="form-group">
-            <button class="btn btn-default col-xs-2">취 소</button>
-            <button class="btn btn-success col-xs-2 pull-right" @click="save">작성완료</button>
+              <button class="btn btn-default col-xs-2">취 소</button>
+              <button class="btn btn-success col-xs-2 pull-right" @click="save">작성완료</button>
             </div>
         </form>
     </div>

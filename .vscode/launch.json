@@ -6,6 +6,13 @@
             "request": "launch",
             "mainClass": "com.bitcamp.web.Application",
             "projectName": "web"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DemoApplication",
+            "request": "launch",
+            "mainClass": "com.bitcamp.web.DemoApplication",
+            "projectName": "web"
         }
     ]
 }

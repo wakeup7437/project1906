@@ -1,17 +1,17 @@
 <template>
     <div class="list">
         <div class="list-group">
-        <slot v-for="item in arr" :text="item.text">
-            <router-link to="">
-                <BoardListItem v-bind:udata="item"></BoardListItem>
-            </router-link>
-        </slot>
+        <div v-for="item in arr" v-bind:key="item.text">
+            
+                <BoardListItem v-bind:udata="item" @click="view(item)"></BoardListItem>
+        
+        </div>
         </div>
     <div>
         <nav>
             <ul class="pager">
                 <li><a href="#">이전</a></li>
-                <li><a href="#">다음</a></li>
+                <li><a href="#" @click="view(item)">다음</a></li>
             </ul>
         </nav>
     </div>
@@ -31,18 +31,19 @@ export default {
         }
     },
     methods:{
-        
+        view(d){
+            alert("ddddd");
+            $router.push(d.bno)
+            
+        }
     },
     created:function(){
-        axios.get("http://localhost:9000/board/all")
+        axios.get("http://localhost:9000/board/"+this.$route.params.category)
         .then(res=>{
-            // for(item in res.data){
-            //     console.log("dddd:"+item)
-            // }
             this.arr=res.data
         })
         .catch(e=>{
-            alert("xxxxx"+e)
+            alert(e)
         })
     }
 }

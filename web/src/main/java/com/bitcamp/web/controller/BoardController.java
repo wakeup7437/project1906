@@ -2,6 +2,7 @@ package com.bitcamp.web.controller;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 import com.bitcamp.web.domain.BoardDTO;
 import com.bitcamp.web.entities.Board;
@@ -69,7 +70,7 @@ public class BoardController {
 
     //게시글 수정
     @PutMapping("/{id}")
-    public HashMap<String,String> update(@PathVariable String id,@RequestBody BoardDTO dto){
+    public HashMap<String,String> update(@PathVariable String id,@RequestBody Board dto){
         System.out.println(id);
         HashMap<String, String> map = new HashMap<>();
         Board bo = repo.findById(Long.parseLong(id)).get();
@@ -83,9 +84,15 @@ public class BoardController {
     //조회
     @GetMapping("/all")
     public List<Board> view() {
-        System.out.println("========findall=========");
         return (List<Board>) repo.findAll();
     }
-    
+    @GetMapping("/detail/{id}")
+    public Optional<Board> detailView(@PathVariable Long id){
+        return repo.findById(id);
+    }
+    @GetMapping("/{category}")
+    public List<Board> detailView(@PathVariable String category){
+        return repo.findByCategoryOrderByBnoDesc(category);
+    }
     
 }

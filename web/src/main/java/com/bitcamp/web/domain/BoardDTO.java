@@ -14,6 +14,6 @@ import lombok.Setter;
 @Component
 @Lazy
 public class BoardDTO {
-    private String writer,title,category,content,recommend,photolink;
+    private String writer,title,category,content,recommend;
     
 }

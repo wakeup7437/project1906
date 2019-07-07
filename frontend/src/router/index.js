@@ -11,8 +11,8 @@ export default new Router({
   mode:"history",
   routes: [
     {path: '/',name: 'home',component: Home},
-    {path: '/board',name: 'board',component: Board},
+    {path: '/board/:category',name: 'board',component: Board},
     {path: '/board/write',name: 'write',component: BoardWrite},
-    {path: '/board/:id',name: 'view',component: BoardItemView}
+    {path: '/board/detail/:id',name: 'view',component: BoardItemView}
   ],
 });
