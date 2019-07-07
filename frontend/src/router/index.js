@@ -12,7 +12,7 @@ export default new Router({
   routes: [
     {path: '/',name: 'home',component: Home},
     {path: '/board/:category',name: 'board',component: Board},
-    {path: '/board/write',name: 'write',component: BoardWrite},
+    {path: '/write',name: 'write',component: BoardWrite},
     {path: '/board/detail/:id',name: 'view',component: BoardItemView}
   ],
 });
